@@ -46,7 +46,7 @@ class ScalarField {
 			for (let i = 0; i<this.rows; i++) {
 				for (let j = 0; j<this.columns; j++) {
 					push();
-					stroke(255 * this.field.get([i, j]), 180);
+					stroke(255 * this.field.get([i, j]), 44, 79);
 					strokeWeight(this.cellSize/5);
 					point(j * this.cellSize + this.X_OFFSET, i * this.cellSize + this.Y_OFFSET);
 					pop();
