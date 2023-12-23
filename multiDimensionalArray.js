@@ -21,7 +21,7 @@ class multiDimensionalArray {
 	}
 
 	// Get the value at index [x, y, z, ...]
-	at(index) {
+	get(index) {
 		// Check for index length
 		if(index.length != this.shape.length) {
 			throw new Error("Index shape is not the same as array shape", { cause: index.length });
@@ -49,6 +49,7 @@ class multiDimensionalArray {
 			}
 			loc += temp*index[dim];
 		}
+
 		return this.array[loc];
 	}
 
