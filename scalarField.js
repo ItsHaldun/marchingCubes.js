@@ -1,9 +1,10 @@
 class ScalarField {
-	constructor(rows, columns, cellSize, space_increment=0.1, time_increment=0.02) {
+	constructor(rows, columns, cellSize, space_increment=0.15, time_increment=0.02, lineThickness=10) {
 		// Save parameters
 		this.rows = rows;
 		this.columns = columns;
 		this.cellSize = cellSize;
+		this.lineThickness = lineThickness;
 
 		// Calculate the offsets for better visuals
 		this.X_OFFSET = 0;
@@ -47,7 +48,7 @@ class ScalarField {
 				for (let j = 0; j<this.columns; j++) {
 					push();
 					stroke(255 * this.field.get([i, j]), 44, 79);
-					strokeWeight(this.cellSize/5);
+					strokeWeight(this.lineThickness);
 					point(j * this.cellSize + this.X_OFFSET, i * this.cellSize + this.Y_OFFSET);
 					pop();
 				}
@@ -102,7 +103,7 @@ class ScalarField {
 		let ad = createVector(0, lerp(0, this.cellSize, ((1-a)/(d-a))));
 
 		push();
-		strokeWeight(200/this.rows);
+		strokeWeight(this.lineThickness);
 		stroke("#5387E0");
 		translate(origin.x, origin.y);
 		// Lookup table
