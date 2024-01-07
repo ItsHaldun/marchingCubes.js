@@ -13,7 +13,7 @@ let settings;
 
 function setup() {
 	// Calculate window sizes
-	HEADER_OFFSET = 57;
+	HEADER_OFFSET = 0;
   w = windowWidth;
   h = windowHeight - HEADER_OFFSET;
 
